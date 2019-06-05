@@ -1,5 +1,6 @@
 const axios = require('axios');
 const solveMathProblem = require('./equation');
+
 // Retrieving and solving problem from API
 const getResult = async (url) => {
   try {
@@ -12,7 +13,7 @@ const getResult = async (url) => {
 
     return { id, result };
   } catch (error) {
-    return console.error(error);
+    return console.error('Could not connect to the API');
   }
 };
 
@@ -25,7 +26,7 @@ const postResult = async (pURL, id, result) => {
     else if (res.status === 500) console.log('ID cannot be found!');
     return res.data;
   } catch (error) {
-    return console.error(error);
+    return console.error(`Error submitting equation id ${id} with result ${result}`);
   }
 };
 
