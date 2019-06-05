@@ -1,31 +1,5 @@
 const axios = require('axios');
-
-// Helper function to get result of operation
-function solveMathProblem(operation, value1, value2) {
-  let answer = null;
-
-  switch (operation) {
-    case 'addition':
-      answer = value1 + value2;
-      break;
-    case 'subtraction':
-      answer = value1 - value2;
-      break;
-    case 'multiplication':
-      answer = value1 * value2;
-      break;
-    case 'division':
-      answer = value1 / value2;
-      break;
-    case 'remainder':
-      answer = value1 % value2;
-      break;
-    default:
-      console.log(`Operation: ${operation} not found.`);
-  }
-  return answer;
-}
-
+const solveMathProblem = require('./equation');
 // Retrieving and solving problem from API
 const getResult = async (url) => {
   try {
